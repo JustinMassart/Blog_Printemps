@@ -35,7 +35,7 @@
     </head>
     <body class="bg-gray-200">
         <div class="overflow-x-hidden bg-gray-100">
-            <?php include PARTIALS_PATH.'_nav-connected.php' ?>
+            <?php include PARTIALS_PATH . '_nav-connected.php' ?>
             <div class="px-6 py-8">
                 <div class="container flex justify-between mx-auto">
                     <div class="w-full lg:w-8/12">
@@ -76,10 +76,10 @@
                                 <select name="post-category"
                                         id="post-category"
                                         class="w-full rounded-md<?= isset($_SESSION['errors']['post-category']) ? ' border-red-600  accent-red-600' : ' border-gray-300' ?> shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                    <?php foreach (array_keys($view['data']['categories']) as $category): ?>
-                                        <option value="<?= $category ?>"
-                                            <?= (isset($_SESSION['old']['post-category']) && $category === $_SESSION['old']['post-category']) ? 'selected' : '' ?>
-                                        ><?= ucwords($category) ?></option>
+                                    <?php foreach ($view['data']['categories'] as $category): ?>
+                                        <option value="<?= $category->category_name ?>"
+                                            <?= (isset($_SESSION['old']['post-category']) && $category->category_name === $_SESSION['old']['post-category']) ? 'selected' : '' ?>
+                                        ><?= ucwords($category->category_name) ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <input type="hidden"
@@ -92,7 +92,7 @@
                             </form>
                         </div>
                     </div>
-                    <?php include PARTIALS_PATH.'_aside.php' ?>
+                    <?php include PARTIALS_PATH . '_aside.php' ?>
                 </div>
                 <footer class="px-6 py-2 text-gray-100 bg-gray-800">
                     <div class="container flex flex-col items-center justify-between mx-auto md:flex-row"><a href="#"

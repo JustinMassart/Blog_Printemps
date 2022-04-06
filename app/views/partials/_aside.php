@@ -21,11 +21,11 @@
         <h1 class="mb-4 text-xl font-bold text-gray-700">Categories</h1>
         <div class="flex flex-col max-w-sm px-4 py-6 mx-auto bg-white rounded-lg shadow-md">
             <ul>
-                <?php foreach ($view['data']['categories'] as $category_name => $category_count): ?>
-                    <li class="mb-3"><a href="index.php?category=<?= $category_name ?>"
+                <?php foreach ($view['data']['categories'] as $category): ?>
+                    <li class="mb-3"><a href="index.php?category=<?= $category->category_slug ?>"
                                         class="mx-1 font-bold text-gray-700 hover:text-gray-600 hover:underline">
-                            <?= ucwords($category_name) ?></a> contains <?= $category_count ?>
-                        post<?php if ($category_count > 1): ?>s<?php endif ?>
+                            <?= ucwords($category->category_name) ?></a> contains <?= $category->post_count ?>
+                        post<?php if ($category->post_count > 1): ?>s<?php endif; ?>
                     </li>
                 <?php endforeach; ?>
 
