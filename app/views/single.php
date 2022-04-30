@@ -67,9 +67,11 @@
 												class="hidden object-cover w-10 h-10 mr-4 rounded-full sm:block">
 										<h1 class="font-bold text-gray-700 hover:underline"><?= ucwords ( $view[ 'data' ][ 'post' ] -> author_name ) ?></h1>
 									</a>
-									<a href="?category=<?= $view[ 'data' ][ 'post' ] -> categories -> category_slug ?>"
-									   class="px-2 py-1 font-bold text-gray-100 bg-gray-600 rounded hover:bg-gray-500"><?= ucwords ( $view[ 'data' ][ 'post' ] -> category_name ) ?>
-									</a>
+									<?php foreach ( $view[ 'data' ][ 'post' ] -> categories as $category ): ?>
+										<a href="?category=<?= $category -> category_slug ?>"
+										   class="px-2 py-1 font-bold text-gray-100 bg-gray-600 rounded hover:bg-gray-500"><?= ucwords ( $category -> category_name ) ?>
+										</a>
+									<?php endforeach; ?>
 								</div>
 								<div class="my-4">
                                     <span class="font-light text-gray-600">

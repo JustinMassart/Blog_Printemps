@@ -226,10 +226,10 @@ SQL;
 		{ //obj
 			// ajouter les catégories de chaque post
 
-			$post = $this -> get_categories_by_post ( $post -> id );
+			$categories = $this -> get_categories_by_post ( $post -> id );
 			//var_dump($post);die();
 
-			return $post;
+			return $categories;
 
 
 		}
