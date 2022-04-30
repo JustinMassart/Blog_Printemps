@@ -205,8 +205,6 @@ SQL;
 
 			$this -> add_categories_to_post ( $post );
 
-			var_dump ( $post );
-			die();
 			return $post;
 		}
 
